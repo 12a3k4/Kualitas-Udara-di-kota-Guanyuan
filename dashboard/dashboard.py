@@ -131,3 +131,13 @@ plt.xlabel("Year")
 plt.ylabel("°C")
 plt.legend()
 st.pyplot(fig)
+
+st.subheader("Korelasi Antara Polusi Udara di Guanyuan")
+groupByYear = main_df.groupby("day").mean(numeric_only=True)
+
+
+plt.figure(figsize=(13,9))
+fig = plt.figure()  # Simpan ke dalam variabel fig
+sns.heatmap(main_df.corr(numeric_only=True), cmap=plt.cm.Reds, annot=True)
+plt.title("Corellation Air Pollutants in Guanyuan")
+st.pyplot(fig)  # Tampilkan dengan Streamlit
