@@ -7,7 +7,7 @@ sns.set(style='dark')
 
 
 # Membaca data dari CSV
-all_df = pd.read_csv("all_data.csv")
+all_df = pd.read_csv("./all_data.csv")
 
 # Menggabungkan kolom "day", "month", dan "year" menjadi satu kolom datetime
 all_df['day'] = pd.to_datetime(all_df[['year', 'month', 'day']])
